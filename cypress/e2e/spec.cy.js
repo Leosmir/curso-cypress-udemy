@@ -1,4 +1,5 @@
 import { HomeMethods } from "./pages/Home/home.methods"
+import { CartMethods } from "./pages/cart/cart.methods"
 import { LoginMethods } from "./pages/login/login.methods"
 import { SignupMethods } from "./pages/signup/signup.methods"
 
@@ -21,6 +22,12 @@ describe('template spec', () => {
     cy.visit('https://www.demoblaze.com/')
     HomeMethods.clickOnProductLink('Iphone 6 32gb')
     cy.wait(5000)
+  })
+
+  it('Cart', () => {
+    cy.visit('https://www.demoblaze.com/')
+    cy.wait(30000)
+    CartMethods.clickOnDeleteLink('Nexus 6')
   })
 
 })
